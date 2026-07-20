@@ -801,11 +801,10 @@
 .popular-swiper-wrapper-outer {
   position: relative;
   padding: 0 20px;
-  overflow: hidden;
 }
 
 .popular-swiper {
-  overflow: visible !important;
+  overflow: hidden !important;
   padding-bottom: 72px !important;
 }
 

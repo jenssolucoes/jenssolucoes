@@ -261,5 +261,36 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       },
     });
+
+    // Reinitialize Popular Services Swiper after inline scripts run
+    // Using requestAnimationFrame to ensure this runs AFTER inline <script> tags
+    requestAnimationFrame(() => {
+      const popularSwiperEl = document.querySelector(".popular-swiper");
+      if (popularSwiperEl && popularSwiperEl.swiper) {
+        popularSwiperEl.swiper.destroy(true, true);
+      }
+
+      if (popularSwiperEl) {
+        new Swiper(".popular-swiper", {
+          slidesPerView: "auto",
+          spaceBetween: 12,
+          watchOverflow: true,
+          watchSlidesProgress: true,
+          navigation: {
+            nextEl: "#popular-next",
+            prevEl: "#popular-prev",
+            disabledClass: "swiper-button-disabled",
+          },
+          pagination: {
+            el: ".popular-swiper-pagination",
+            clickable: true,
+          },
+          breakpoints: {
+            900: { spaceBetween: 16 },
+            1200: { spaceBetween: 16 },
+          },
+        });
+      }
+    });
   }
 });
