@@ -9,28 +9,14 @@ class Header {
     this.navbar = document.querySelector(".nav-bar");
     this.toggle = document.querySelector(".menu-toggle");
     this.navLinks = document.querySelector(".nav-links");
-    this.topbar = document.querySelector(".top-bar");
-    this.topbarHeight = 0;
     this.lastScroll = 0;
 
     this.init();
   }
 
   init() {
-    this.calculateTopbarHeight();
     this.bindEvents();
     this.handleScroll();
-  }
-
-  calculateTopbarHeight() {
-    if (this.topbar) {
-      const styles = window.getComputedStyle(this.topbar);
-      if (styles.display !== "none") {
-        this.topbarHeight = this.topbar.offsetHeight;
-      } else {
-        this.topbarHeight = 0;
-      }
-    }
   }
 
   bindEvents() {
@@ -76,6 +62,7 @@ class Header {
   toggleMenu() {
     const isOpen = this.navLinks.classList.toggle("active");
     this.toggle.classList.toggle("active", isOpen);
+    if (this.navbar) this.navbar.classList.toggle("menu-open", isOpen);
     this.toggle.setAttribute("aria-expanded", isOpen);
     this.toggle.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
   }
@@ -83,6 +70,7 @@ class Header {
   closeMenu() {
     this.navLinks.classList.remove("active");
     this.toggle.classList.remove("active");
+    if (this.navbar) this.navbar.classList.remove("menu-open");
     this.toggle.setAttribute("aria-expanded", "false");
     this.toggle.setAttribute("aria-label", "Abrir menu");
   }
@@ -91,7 +79,7 @@ class Header {
     if (!this.navbar) return;
     const scrollY = window.scrollY;
 
-    if (scrollY > this.topbarHeight) {
+    if (scrollY > 50) {
       this.navbar.classList.add("scrolled");
     } else {
       this.navbar.classList.remove("scrolled");
@@ -101,8 +89,6 @@ class Header {
   }
 
   handleResize() {
-    this.calculateTopbarHeight();
-
     // Close mobile menu on resize to desktop
     if (window.innerWidth >= 992 && this.navLinks) {
       this.closeMenu();

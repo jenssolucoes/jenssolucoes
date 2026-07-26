@@ -100,9 +100,20 @@
   padding-bottom: 72px;
 }
 
-/*================================ */
-/* ====== PAGE HERO DESKTOP ====== */
-/*================================ */
+@media (min-width: 992px) {
+  .page-hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: calc(var(--header-height) + 40px) 0 40px;
+  }
+
+  .page-hero-text {
+    padding-bottom: 0;
+  }
+}
+
 @media (min-width: 768px) {
   .page-hero-title {
     font-size: 58px;
