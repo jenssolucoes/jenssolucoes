@@ -21,6 +21,31 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://jenssolucoes.com.br/servicos/eletricista-curitiba/eletricista-pinhais/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://jenssolucoes.com.br/servicos/eletricista-curitiba/eletricista-sao-jose-dos-pinhais/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://jenssolucoes.com.br/servicos/eletricista-curitiba/instalacao-de-tomadas-e-interruptores/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://jenssolucoes.com.br/servicos/eletricista-curitiba/instalacao-e-conserto-chuveiro/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://jenssolucoes.com.br/servicos/eletricista-curitiba/troca-de-disjuntores/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://jenssolucoes.com.br/servicos/encanador-curitiba/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -34,6 +59,11 @@
     <loc>https://jenssolucoes.com.br/servicos/seguranca-eletronica/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jenssolucoes.com.br/servicos/seguranca-eletronica/cameras-de-seguranca-cftv/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://jenssolucoes.com.br/servicos/automacao-residencial/</loc>

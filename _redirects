@@ -1,1 +1,19 @@
+# Dominio Canonico (Redireciona subdominios e HTTP para HTTPS principal)
 https://jenssolucoes.pages.dev/* https://jenssolucoes.com.br/:splat 301!
+http://jenssolucoes.com.br/* https://jenssolucoes.com.br/:splat 301!
+https://www.jenssolucoes.com.br/* https://jenssolucoes.com.br/:splat 301!
+http://www.jenssolucoes.com.br/* https://jenssolucoes.com.br/:splat 301!
+
+# Redirecionamentos de extensoes .html para URLs limpas com barra final
+/index.html / 301!
+/quem-somos.html /quem-somos/ 301!
+/servicos.html /servicos/ 301!
+/blog.html /blog/ 301!
+/contato.html /contato/ 301!
+
+# Atalhos amigaveis de servicos
+/eletricista /servicos/eletricista-curitiba/ 301
+/encanador /servicos/encanador-curitiba/ 301
+/reformas /servicos/reformas-curitiba/ 301
+/seguranca /servicos/seguranca-eletronica/ 301
+/automacao /servicos/automacao-residencial/ 301

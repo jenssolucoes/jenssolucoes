@@ -3,7 +3,6 @@
    Depende de: main.css, hero-pages.css (variáveis e base)
    ============================================ */
 
-
 /*================================ */
 /*================================ */
 /* ====== SERVICES SECTION ======= */
@@ -28,27 +27,10 @@
   flex-direction: column;
 }
 
-.service-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background-color: var(--primary);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s ease;
-}
-
 .service-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-2px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
   border-color: transparent;
-}
-
-.service-card:hover::before {
-  transform: scaleX(1);
 }
 
 .card-icon {
@@ -67,7 +49,7 @@
 .service-card:hover .card-icon {
   background-color: var(--primary);
   color: var(--text-inverse);
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .service-card h3 {
