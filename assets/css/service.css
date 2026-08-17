@@ -146,10 +146,6 @@
   border-bottom: none;
 }
 
-.service-block-title span {
-  color: var(--primary);
-}
-
 /* ====== DESCRIPTION ============ */
 .service-description {
   font-size: 16px;

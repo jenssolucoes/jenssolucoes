@@ -52,7 +52,7 @@
 /*================================ */
 /*================================ */
 .blog-card {
-  background-color: #ffffff;
+  background-color: var(--background-2);
   border: 1px solid var(--border-1);
   border-radius: 20px;
   overflow: hidden;
