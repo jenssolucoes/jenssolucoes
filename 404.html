@@ -6,7 +6,9 @@
     <meta name="format-detection" content="telephone=yes" />
 
     <!-- Favicon -->
-    <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
     <!-- SEO Básico -->
@@ -15,10 +17,7 @@
       name="description"
       content="Desculpe, a página que você está procurando não existe ou foi removida."
     />
-    <meta
-      name="robots"
-      content="noindex, follow"
-    />
+    <meta name="robots" content="noindex, follow" />
     <meta name="author" content="JENS Soluções" />
     <meta
       name="keywords"
@@ -145,8 +144,12 @@
         margin: 0 auto 40px;
       }
       @media (min-width: 768px) {
-        .not-found-title { font-size: 140px; }
-        .not-found-subtitle { font-size: 40px; }
+        .not-found-title {
+          font-size: 140px;
+        }
+        .not-found-subtitle {
+          font-size: 40px;
+        }
       }
     </style>
   </head>
@@ -234,9 +237,15 @@
           <h1 class="not-found-title">404</h1>
           <h2 class="not-found-subtitle">Página não encontrada</h2>
           <p class="not-found-text">
-            Desculpe, não conseguimos encontrar a página que você está procurando. Ela pode ter sido removida, alterada de nome, ou está temporariamente indisponível.
+            Desculpe, não conseguimos encontrar a página que você está
+            procurando. Ela pode ter sido removida, alterada de nome, ou está
+            temporariamente indisponível.
           </p>
-          <a href="/" class="btn btn-primary btn-lg btn-icon" style="margin: 0 auto;">
+          <a
+            href="/"
+            class="btn btn-primary btn-lg btn-icon"
+            style="margin: 0 auto"
+          >
             Voltar para o Início
             <svg viewBox="0 0 24 24" fill="currentColor">
               <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
