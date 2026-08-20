@@ -56,7 +56,7 @@
       content="https://jenssolucoes.com.br/assets/images/logotipo-2.png"
     />
     <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta property="og:image:height" content="1200" />
     <meta property="og:url" content="https://jenssolucoes.com.br/" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
@@ -79,13 +79,49 @@
     <!-- Theme Color -->
     <meta name="theme-color" content="#0f3563" />
 
-    <!-- Preload Logotipo -->
+    <!-- Preload Hero Image (LCP Optimization) -->
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/images/handyman-small.webp"
+      type="image/webp"
+      media="(max-width: 991px)"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/images/handyman.webp"
+      type="image/webp"
+      media="(min-width: 992px)"
+      fetchpriority="high"
+    />
+
+    <!-- Preload Logotipo e Imagens -->
     <link
       rel="preload"
       as="image"
       href="/assets/images/logotipo.svg"
       type="image/svg+xml"
       fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/images/about.webp"
+      type="image/webp"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/images/cta-image.webp"
+      type="image/webp"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/images/post-1.webp"
+      type="image/webp"
     />
 
     <!-- Preload Fonte -->
@@ -628,10 +664,11 @@
           <div class="about-image">
             <div class="image-placeholder">
               <img
-                src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=800&auto=format&fit=crop"
+                src="/assets/images/about.webp"
                 alt="Profissional trabalhando em obra"
                 loading="lazy"
               />
+              <div class="about-image-gradient"></div>
             </div>
             <div class="about-experience-badge">
               <span class="experience-number">30+</span>
@@ -1117,7 +1154,7 @@
           <div class="faq-image-column">
             <div class="faq-image-card">
               <img
-                src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&q=80&w=800"
+                src="/assets/images/cta-image.webp"
                 alt="Suporte"
                 class="faq-main-img"
               />
@@ -1125,12 +1162,17 @@
 
               <div class="faq-overlay-text">
                 <h3>
-                  Precisa de Ajuda? Nossa Equipe de Suporte Está à Sua
-                  Disposição.
+                  Precisa de Ajuda? Nossa Equipe de está à Sua Disposição.
                 </h3>
               </div>
 
-              <div class="faq-support-box">
+              <a
+                href="https://wa.me/5541996012767?text=Olá!%20Vim%20pelo%20site%20da%20JENS%20Soluções%20e%20gostaria%20de%20solicitar%20um%20orçamento."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="faq-support-box"
+                aria-label="Fale conosco no WhatsApp: (41) 9 9601-2767"
+              >
                 <div class="support-icon-box">
                   <svg
                     viewBox="0 0 24 24"
@@ -1144,10 +1186,10 @@
                   </svg>
                 </div>
                 <div class="support-text-box">
-                  <span class="support-label">Ligue para o Suporte</span>
+                  <span class="support-label">Chame no WhatsApp</span>
                   <span class="support-number">(41) 9 9601-2767</span>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
@@ -1265,7 +1307,7 @@
                   Elétrica
                 </span>
                 <img
-                  src="/assets/images/handyman-small.jpg"
+                  src="/assets/images/post-1.webp"
                   alt="Dicas de Elétrica"
                   loading="lazy"
                 />

@@ -68,7 +68,7 @@
       content="Equipe da JENS Soluções atendendo clientes em Curitiba e região"
     />
     <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta property="og:image:height" content="1200" />
     <meta property="og:url" content="https://jenssolucoes.com.br/blog/" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
@@ -92,7 +92,16 @@
       content="Equipe da JENS Soluções atendendo clientes em Curitiba e região"
     />
 
-    <!-- Preload -->
+    <!-- Preload Imagem Destaque (LCP Optimization) -->
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/images/post-1.webp"
+      type="image/webp"
+      fetchpriority="high"
+    />
+
+    <!-- Preload Logotipo -->
     <link
       rel="preload"
       as="image"
@@ -317,7 +326,7 @@
                   Elétrica
                 </span>
                 <img
-                  src="/assets/images/handyman-small.jpg"
+                  src="/assets/images/post-1.webp"
                   alt="Dicas de Elétrica"
                   loading="lazy"
                 />
