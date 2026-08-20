@@ -1,0 +1,23 @@
+{
+  "name": "JENS Soluções - Manutenção e Reformas",
+  "short_name": "JENS Soluções",
+  "description": "Especialistas em manutenção, reformas, elétrica, hidráulica e segurança em Curitiba e Região.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0f3563",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
