@@ -93,7 +93,6 @@
       as="image"
       href="/assets/images/logotipo.svg"
       type="image/svg+xml"
-      fetchpriority="high"
     />
 
     <!-- Preload Fonte -->
@@ -187,20 +186,6 @@
       }
     </script>
 
-    <!-- WebSite -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "@id": "https://jenssolucoes.com.br/#website",
-        "url": "https://jenssolucoes.com.br/",
-        "name": "JENS Soluções",
-        "publisher": {
-          "@id": "https://jenssolucoes.com.br/#localBusiness"
-        }
-      }
-    </script>
-
     <!-- WebPage -->
     <script type="application/ld+json">
       {
@@ -261,9 +246,24 @@
     </script>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/assets/lib/swiper/swiper-bundle.min.css" />
+    <!-- main.css e service.css seguem bloqueantes (críticos pro layout acima da dobra) -->
     <link rel="stylesheet" href="/assets/css/main.css" />
     <link rel="stylesheet" href="/assets/css/service.css" />
+
+    <!-- Swiper CSS carregado de forma não-bloqueante: baixa em paralelo sem travar o first paint,
+         e vira stylesheet assim que chega. Fallback noscript garante que funcione sem JS. -->
+    <link
+      rel="preload"
+      href="/assets/lib/swiper/swiper-bundle.min.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript>
+      <link rel="stylesheet" href="/assets/lib/swiper/swiper-bundle.min.css" />
+    </noscript>
   </head>
   <body>
     <div class="loader">
@@ -323,7 +323,7 @@
 
         <div class="nav-actions">
           <a
-            href="https://wa.me/5541998854129?text=Olá!%20Vim%20pelo%20website%20da%20JENS%20Soluções%20e%20gostaria%20de%20obter%20mais%20informações%20sobre%20os%20serviços%20oferecidos.%20Poderiam%20me%20atender%3F"
+            href="https://wa.me/5541996012767?text=Olá!%20Vim%20pelo%20website%20da%20JENS%20Soluções%20e%20gostaria%20de%20obter%20mais%20informações%20sobre%20os%20serviços%20oferecidos.%20Poderiam%20me%20atender%3F"
             class="btn btn-primary btn-icon"
             target="_blank"
             ><svg
@@ -1708,7 +1708,7 @@
 
         <!-- Botão WhatsApp -->
         <a
-          href="https://wa.me/5541996974244"
+          href="https://wa.me/5541996012767"
           target="_blank"
           class="whatsapp-button"
           id="whatsapp-btn"
@@ -1833,7 +1833,7 @@
           </a>
 
           <a
-            href="https://wa.me/5541998854129?text=Olá!%20Vim%20pelo%20website%20da%20JENS%20Soluções%20e%20gostaria%20de%20obter%20mais%20informações%20sobre%20os%20serviços%20oferecidos.%20Poderiam%20me%20atender%3F"
+            href="https://wa.me/5541996012767?text=Olá!%20Vim%20pelo%20website%20da%20JENS%20Soluções%20e%20gostaria%20de%20obter%20mais%20informações%20sobre%20os%20serviços%20oferecidos.%20Poderiam%20me%20atender%3F"
             target="_blank"
             rel="noopener"
             class="footer-contact-item"

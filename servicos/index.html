@@ -92,13 +92,12 @@
       content="Equipe da JENS Soluções prestando serviços em Curitiba e região"
     />
 
-    <!-- Preload -->
+    <!-- Preload Logotipo -->
     <link
       rel="preload"
       as="image"
       href="/assets/images/logotipo.svg"
       type="image/svg+xml"
-      fetchpriority="high"
     />
 
     <!-- Preload Fonte -->
@@ -146,7 +145,7 @@
           "@id": "https://jenssolucoes.com.br/#localBusiness"
         },
         "publisher": {
-          "@id": "https://jenssolucoes.com.br/#organization"
+          "@id": "https://jenssolucoes.com.br/#localBusiness"
         },
         "primaryImageOfPage": {
           "@type": "ImageObject",
@@ -178,11 +177,25 @@
       }
     </script>
 
-    <!-- Estilos -->
-    <link rel="stylesheet" href="/assets/lib/swiper/swiper-bundle.min.css" />
+    <!-- Estilos críticos (bloqueantes) -->
     <link rel="stylesheet" href="/assets/css/main.css" />
     <link rel="stylesheet" href="/assets/css/hero-pages.css" />
     <link rel="stylesheet" href="/assets/css/services-page.css" />
+
+    <!-- Swiper CSS carregado de forma não-bloqueante: baixa em paralelo sem travar o first paint,
+         e vira stylesheet assim que chega. Fallback noscript garante que funcione sem JS. -->
+    <link
+      rel="preload"
+      href="/assets/lib/swiper/swiper-bundle.min.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript>
+      <link rel="stylesheet" href="/assets/lib/swiper/swiper-bundle.min.css" />
+    </noscript>
   </head>
   <body>
     <div class="loader">
@@ -240,7 +253,7 @@
 
         <div class="nav-actions">
           <a
-            href="https://wa.me/5541998854129?text=Olá!%20Vim%20pelo%20website%20da%20JENS%20Soluções%20e%20gostaria%20de%20obter%20mais%20informações%20sobre%20os%20serviços%20oferecidos.%20Poderiam%20me%20atender%3F"
+            href="https://wa.me/5541996012767?text=Olá!%20Vim%20pelo%20website%20da%20JENS%20Soluções%20e%20gostaria%20de%20obter%20mais%20informações%20sobre%20os%20serviços%20oferecidos.%20Poderiam%20me%20atender%3F"
             class="btn btn-primary btn-icon"
             target="_blank"
             ><svg
@@ -468,7 +481,7 @@
               <!-- Botão WhatsApp — laranjado (btn-primary) -->
               <a
                 href="
-https://wa.me/5541998854129?text=Olá!%20Vim%20pelo%20website%20da%20JENS%20Soluções%20e%20gostaria%20de%20obter%20mais%20informações%20sobre%20os%20serviços%20oferecidos.%20Poderiam%20me%20atender%3F
+https://wa.me/5541996012767?text=Olá!%20Vim%20pelo%20website%20da%20JENS%20Soluções%20e%20gostaria%20de%20obter%20mais%20informações%20sobre%20os%20serviços%20oferecidos.%20Poderiam%20me%20atender%3F
 
 "
                 class="btn btn-primary btn-icon"
@@ -529,7 +542,7 @@ https://wa.me/5541998854129?text=Olá!%20Vim%20pelo%20website%20da%20JENS%20Solu
 
         <a
           href="
-https://wa.me/5541998854129?text=Olá!%20Vim%20pelo%20website%20da%20JENS%20Soluções%20e%20gostaria%20de%20obter%20mais%20informações%20sobre%20os%20serviços%20oferecidos.%20Poderiam%20me%20atender%3F
+https://wa.me/5541996012767?text=Olá!%20Vim%20pelo%20website%20da%20JENS%20Soluções%20e%20gostaria%20de%20obter%20mais%20informações%20sobre%20os%20serviços%20oferecidos.%20Poderiam%20me%20atender%3F
 
 "
           target="_blank"
@@ -656,7 +669,7 @@ https://wa.me/5541998854129?text=Olá!%20Vim%20pelo%20website%20da%20JENS%20Solu
           </a>
 
           <a
-            href="https://wa.me/5541998854129?text=Olá!%20Vim%20pelo%20website%20da%20JENS%20Soluções%20e%20gostaria%20de%20obter%20mais%20informações%20sobre%20os%20serviços%20oferecidos.%20Poderiam%20me%20atender%3F"
+            href="https://wa.me/5541996012767?text=Olá!%20Vim%20pelo%20website%20da%20JENS%20Soluções%20e%20gostaria%20de%20obter%20mais%20informações%20sobre%20os%20serviços%20oferecidos.%20Poderiam%20me%20atender%3F"
             target="_blank"
             rel="noopener"
             class="footer-contact-item"
