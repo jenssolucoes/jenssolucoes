@@ -79,7 +79,7 @@
     <!-- Theme Color -->
     <meta name="theme-color" content="#0f3563" />
 
-    <!-- Preload Hero Image (LCP Optimization) -->
+    <!-- Preload — apenas recursos acima da dobra (item 1 e 2) -->
     <link
       rel="preload"
       as="image"
@@ -97,34 +97,6 @@
       fetchpriority="high"
     />
 
-    <!-- Preload Logotipo e Imagens -->
-    <link
-      rel="preload"
-      as="image"
-      href="/assets/images/logotipo.svg"
-      type="image/svg+xml"
-      fetchpriority="high"
-    />
-    <link
-      rel="preload"
-      as="image"
-      href="/assets/images/about.webp"
-      type="image/webp"
-    />
-    <link
-      rel="preload"
-      as="image"
-      href="/assets/images/cta-image.webp"
-      type="image/webp"
-    />
-    <link
-      rel="preload"
-      as="image"
-      href="/assets/images/post-1.webp"
-      type="image/webp"
-    />
-
-    <!-- Preload Fonte -->
     <link
       rel="preload"
       as="font"
@@ -145,6 +117,14 @@
       href="/assets/fonts/Barlow/Barlow-Regular.woff2"
       type="font/woff2"
       crossorigin
+    />
+
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/images/logotipo.svg"
+      type="image/svg+xml"
+      fetchpriority="high"
     />
 
     <!-- PWA -->
@@ -213,8 +193,8 @@
               "Thursday",
               "Friday"
             ],
-            "opens": "00:00",
-            "closes": "23:59"
+            "opens": "08:00",
+            "closes": "18:00"
           }
         ],
         "sameAs": [
@@ -357,11 +337,33 @@
       }
     </script>
 
-    <!-- Estilos -->
-    <link rel="stylesheet" href="/assets/lib/swiper/swiper-bundle.min.css" />
+    <!-- Estilos críticos (bloqueantes) -->
     <link rel="stylesheet" href="/assets/css/main.css" />
     <link rel="stylesheet" href="/assets/css/home.css" />
-    <link rel="stylesheet" href="/assets/css/blog.css" />
+
+    <!-- Estilos usados só no final da página — não bloqueiam render (item 8) -->
+    <link
+      rel="preload"
+      href="/assets/lib/swiper/swiper-bundle.min.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <link
+      rel="preload"
+      href="/assets/css/blog.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript>
+      <link rel="stylesheet" href="/assets/lib/swiper/swiper-bundle.min.css" />
+      <link rel="stylesheet" href="/assets/css/blog.css" />
+    </noscript>
   </head>
   <body>
     <div class="loader">
