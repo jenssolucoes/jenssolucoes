@@ -84,7 +84,6 @@
 .badge-on-dark {
   background-color: rgba(242, 94, 25, 0.15);
   color: var(--primary);
-  border: 1px solid rgba(242, 94, 25, 0.3);
 }
 
 /*================================ */

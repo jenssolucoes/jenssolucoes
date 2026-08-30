@@ -3,7 +3,6 @@
    Depende de: main.css, hero-pages.css (variáveis e base)
    ============================================ */
 
-
 /*================================ */
 /*================================ */
 /* ====== BLOG SECTION =========== */
@@ -62,8 +61,8 @@
 }
 
 .blog-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 50px rgba(15, 53, 99, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 20px rgba(134, 141, 150, 0.1);
   border-color: transparent;
 }
 
