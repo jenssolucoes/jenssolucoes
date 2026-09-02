@@ -25,6 +25,10 @@
   .service-hero > .container {
     width: 100%;
   }
+
+  .service-hero-title {
+    font-size: 58px;
+  }
 }
 
 .service-hero-inner {
@@ -61,10 +65,11 @@
 
 .service-hero-title {
   font-family: var(--font-header);
-  font-size: clamp(28px, 5vw, 44px);
+  font-size: 34px;
   font-weight: 700;
   color: var(--text-inverse);
-  line-height: 1.15;
+  line-height: 1.12;
+  letter-spacing: -0.5px;
   max-width: 640px;
 }
 

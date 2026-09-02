@@ -4,6 +4,29 @@
    ============================================ */
 
 /* ================================ */
+/* ====== BLOG POST HERO ========== */
+/* ================================ */
+.blog-post-hero-title {
+  font-size: 34px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 16px 0 20px;
+  line-height: 1.12;
+  letter-spacing: -0.5px;
+}
+
+.blog-post-hero-title em {
+  font-style: normal;
+  color: var(--primary);
+}
+
+@media (min-width: 768px) {
+  .blog-post-hero-title {
+    font-size: 58px;
+  }
+}
+
+/* ================================ */
 /* ====== POST LAYOUT ============= */
 /* ================================ */
 .post-layout {
