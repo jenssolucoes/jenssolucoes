@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://jenssolucoes.com.br/sitemap.xml
+
+User-agent: Googlebot-Image
+Disallow: /assets/images/logotipo.svg
