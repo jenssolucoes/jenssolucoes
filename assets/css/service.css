@@ -6,13 +6,21 @@
 .service-hero {
   background-color: var(--secondary);
   min-height: 720px;
+  min-height: max(100vh, 720px);
   padding: 64px 0 72px;
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: left;
+  align-items: stretch;
+}
+
+@media (min-width: 680px) and (max-width: 991px) {
+  .service-hero {
+    min-height: 500px;
+    padding: 140px 0 80px;
+  }
 }
 
 @media (min-width: 992px) {
@@ -25,7 +33,6 @@
   .service-hero > .container {
     width: 100%;
   }
-
 }
 
 .service-hero-inner {
@@ -37,6 +44,8 @@
 .service-hero-breadcrumb {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  margin: 20px 0 12px;
   gap: 8px;
   font-size: 13px;
   color: rgba(255, 255, 255, 0.55);
@@ -264,14 +273,14 @@
 
 .step-body h4 {
   font-family: var(--font-header);
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 700;
   color: var(--secondary);
   margin-bottom: 6px;
 }
 
 .step-body p {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--text-body);
   line-height: 1.6;
 }
@@ -544,10 +553,6 @@
   gap: 10px;
 }
 
-.cta-inline-mobile .cta-card-bottom .btn {
-  width: 100%;
-  min-width: unset;
-}
 /* ====== TRUST / RELATED CARDS == */
 .trust-card {
   background-color: var(--background-1);
