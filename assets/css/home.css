@@ -497,10 +497,31 @@
 /*================================ */
 /* ====== REVIEWS SECTION ======== */
 /*================================ */
+
+/* Container: padding dá espaço p/ sombra e hover não serem cortados
+   (overflow hidden do Swiper); margem negativa compensa o padding */
 .reviews-swiper {
-  width: 100%;
-  padding-bottom: 60px;
-  padding-top: 20px;
+  position: relative;
+  width: auto;
+  margin: 0 -20px;
+  padding: 20px 20px 0;
+  overflow: hidden;
+}
+
+/* Todos os slides com a mesma altura */
+.reviews-swiper .swiper-wrapper {
+  align-items: stretch;
+}
+
+/* .swiper-slide e .review-card são o mesmo elemento.
+   O CSS do Swiper aplica display:block no .swiper-slide e sobrescreve o
+   display:flex do .review-card, então forçamos aqui com seletor mais
+   específico. Isso faz o autor ir pro rodapé do card. */
+.reviews-swiper .swiper-slide.review-card {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  box-sizing: border-box;
 }
 
 .review-card {
@@ -511,7 +532,6 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
-  height: auto;
   transition: var(--transition);
 }
 
@@ -519,12 +539,40 @@
   border-color: var(--primary-light);
 }
 
-.stars {
+/* Ícone do Google + estrelas */
+.review-rating {
   display: flex;
-  gap: 6px;
+  align-items: center;
+  gap: 12px;
   margin-bottom: 24px;
 }
 
+/* Ícone colorido: as cores vêm do próprio SVG (symbol #icon-google).
+   O glifo ocupa quase todo o viewBox, então não precisa de margem negativa. */
+.google-icon {
+  display: block;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+/* margin: 0 evita herdar margin-bottom de outras regras (.stars) */
+.review-rating .stars {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+.review-rating .stars svg {
+  display: block;
+  width: 22px;
+  height: 22px;
+  fill: var(--primary);
+  flex-shrink: 0;
+}
+
+/* flex-grow: 1 ocupa o espaço livre e empurra o autor pro rodapé */
 .review-text {
   font-size: 16px;
   font-style: italic;
@@ -534,11 +582,38 @@
   line-height: 1.8;
 }
 
+/* Autor: avatar com iniciais + nome */
+.reviewer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.reviewer-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--primary-light);
+  color: var(--primary);
+  font-family: var(--font-header);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  user-select: none;
+}
+
 .reviewer-name {
   font-family: var(--font-header);
   font-weight: 700;
   font-size: 18px;
-  margin-bottom: 4px;
+  line-height: 1.2;
+  margin: 0;
 }
 
 .reviewer-location {
@@ -547,14 +622,29 @@
   font-weight: 500;
 }
 
-.swiper-pagination-bullet {
-  width: 10px;
-  height: 10px;
-  background: var(--border-1);
-  opacity: 1;
+/* Paginação: fora do fluxo absoluto, centralizada abaixo dos cards */
+.reviews-swiper .swiper-pagination {
+  position: static !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 32px;
+  padding-bottom: 20px;
+  transform: none;
 }
 
-.swiper-pagination-bullet-active {
+.reviews-swiper .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  margin: 0 !important;
+  background: var(--border-1);
+  opacity: 1;
+  transition: var(--transition);
+}
+
+.reviews-swiper .swiper-pagination-bullet-active {
   background: var(--primary) !important;
   width: 24px;
   border-radius: 5px;
