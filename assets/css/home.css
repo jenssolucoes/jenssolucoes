@@ -5,6 +5,7 @@
 /*================================ */
 .hero-banner {
   position: relative;
+  height: 100vh;
   height: 100dvh;
   min-height: 680px;
   padding: 60px 0 0 0;
@@ -202,7 +203,7 @@
 /*================================ */
 
 .about {
-  padding-top: 272px;
+  padding-top: 112px;
   padding-bottom: 100px;
 }
 
@@ -342,8 +343,8 @@
 /*================================ */
 @media (min-width: 992px) {
   .about {
-    padding-top: 160px;
-    padding-bottom: 100px;
+    padding-top: 132px;
+    padding-bottom: 120px;
   }
   .about-container {
     flex-direction: row;
