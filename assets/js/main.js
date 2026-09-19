@@ -217,6 +217,54 @@ class FloatingButtons {
 }
 
 /*================================  */
+/* ====== HEADING CAPITALIZER ===== */
+/*================================  */
+
+class HeadingCapitalizer {
+  constructor() {
+    this.headings = document.querySelectorAll("h2, h3");
+    this.prepositions = [
+      "com", "de", "da", "do", "das", "dos",
+      "para", "em", "na", "no", "nas", "nos",
+      "e", "ou", "por", "a", "o", "as", "os",
+      "um", "uma", "uns", "umas"
+    ];
+    this.init();
+  }
+
+  init() {
+    this.headings.forEach(heading => {
+      this.capitalizeNode(heading, { isFirst: true });
+    });
+  }
+
+  capitalizeNode(node, state) {
+    node.childNodes.forEach(child => {
+      if (child.nodeType === Node.TEXT_NODE) {
+        let words = child.nodeValue.split(/(\s+|-)/); // Split by whitespace or dash, keeping separators
+        for (let i = 0; i < words.length; i++) {
+          let word = words[i];
+          if (word.trim().length > 0 && word !== "-") {
+            let lowerWord = word.toLowerCase();
+            if (state.isFirst) {
+              words[i] = word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+              state.isFirst = false;
+            } else if (this.prepositions.includes(lowerWord)) {
+              words[i] = lowerWord;
+            } else {
+              words[i] = word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+            }
+          }
+        }
+        child.nodeValue = words.join('');
+      } else if (child.nodeType === Node.ELEMENT_NODE) {
+        this.capitalizeNode(child, state);
+      }
+    });
+  }
+}
+
+/*================================  */
 /*================================  */
 /* ====== INIT ==================== */
 /*================================  */
@@ -227,6 +275,7 @@ document.addEventListener("DOMContentLoaded", () => {
   new SmoothScroll();
   new FaqAccordion();
   new FloatingButtons();
+  new HeadingCapitalizer();
 
   // Initialize Swiper for Reviews
   if (typeof Swiper !== "undefined") {
