@@ -816,11 +816,20 @@
 
 .popular-swiper {
   overflow: hidden !important;
-  padding-bottom: 72px !important;
+  padding-bottom: 0 !important;
+}
+
+/* Faz todos os slides esticarem para a altura do maior */
+.popular-swiper .swiper-wrapper {
+  align-items: stretch;
 }
 
 .popular-swiper .swiper-slide {
   width: 252px;
+  /* Garante que o slide ocupe toda a altura do wrapper */
+  height: auto;
+  display: flex !important;
+  flex-direction: column;
 }
 
 @media (min-width: 560px) {
@@ -843,14 +852,26 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  height: auto;
-  transition: var(--transition);
+  height: 100%; /* Preenche toda a altura do slide */
+  box-sizing: border-box;
+  transition: border-color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   cursor: grab;
 }
 
 .popular-card:hover {
   border-color: rgba(241, 94, 26, 0.3);
   box-shadow: 0 8px 32px rgba(241, 94, 26, 0.08);
+}
+
+.popular-card:hover .popular-card-icon {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.popular-card:hover .popular-card-icon svg {
+  color: #fff;
+  fill: #fff;
 }
 
 .popular-card-icon {
@@ -864,6 +885,13 @@
   justify-content: center;
   flex-shrink: 0;
   margin-bottom: 4px;
+  transition: background-color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.popular-card-icon svg {
+  transition: color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              fill 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .popular-card h3 {
@@ -899,7 +927,15 @@
 
 /* ====== SWIPER BULLETS ========= */
 .popular-swiper-pagination {
-  bottom: 40px !important;
+  position: static !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 32px;
+  padding-bottom: 8px;
+  transform: none !important;
 }
 
 .popular-swiper-pagination .swiper-pagination-bullet {
@@ -919,10 +955,8 @@
   justify-content: center;
   align-items: center;
   gap: 12px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  margin-top: 16px;
+  position: static;
 }
 
 .swiper-nav-btn {
