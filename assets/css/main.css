@@ -183,6 +183,45 @@ img {
   text-transform: uppercase;
   letter-spacing: 1.5px;
 }
+
+/*================================ */
+/*================================ */
+/* ====== SCROLLBAR ============== */
+/*================================ */
+/*================================ */
+
+/* Chrome, Edge, Safari, Opera */
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-2);
+}
+
+/* Borda da cor do track cria um "respiro" e deixa a barra mais fina e boleada */
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: 999px;
+  border: 3px solid var(--background-2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary-dim);
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--background-2);
+}
+
+/* Firefox (não permite bordas arredondadas, só cor e espessura) */
+@supports (-moz-appearance: none) {
+  html {
+    scrollbar-width: auto;
+    scrollbar-color: var(--primary) var(--background-2);
+  }
+}
 /* ================================ */
 /* ====== BUTTONS ================ */
 /* ================================ */

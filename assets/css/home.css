@@ -5,8 +5,8 @@
 /*================================ */
 .hero-banner {
   position: relative;
-  height: calc(100dvh - var(--header-height));
-  min-height: 720px;
+  height: 100dvh;
+  min-height: 680px;
   padding: 60px 0 0 0;
   display: flex;
   flex-direction: column;
@@ -161,7 +161,7 @@
 
 @media (min-width: 992px) {
   .hero-banner {
-    height: calc(100dvh - var(--header-height));
+    height: 100vh;
     min-height: 720px;
     padding: 60px 0 0 0;
   }

@@ -6,7 +6,7 @@
 .service-hero {
   background-color: var(--secondary);
   height: calc(100dvh - var(--header-height));
-  min-height: 720px;
+  min-height: 680px;
   padding: 64px 0 72px;
   position: relative;
   overflow: hidden;
@@ -24,8 +24,8 @@
 
 @media (min-width: 992px) {
   .service-hero {
-    height: calc(100dvh - var(--header-height));
-    min-height: 720px;
+    height: 100vh;
+
     padding: calc(var(--header-height) + 40px) 0 40px;
   }
 
@@ -941,7 +941,7 @@
 }
 
 .popular-swiper-pagination .swiper-pagination-bullet {
-  background-color: var(--border-1);
+  background-color: var(--background-1);
   opacity: 1;
   width: 8px;
   height: 8px;
