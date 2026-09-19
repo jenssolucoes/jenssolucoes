@@ -234,6 +234,10 @@ document.addEventListener("DOMContentLoaded", () => {
       slidesPerView: 1,
       spaceBetween: 30,
       loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -262,6 +266,10 @@ document.addEventListener("DOMContentLoaded", () => {
           spaceBetween: 12,
           watchOverflow: true,
           watchSlidesProgress: true,
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+          },
           navigation: {
             nextEl: "#popular-next",
             prevEl: "#popular-prev",

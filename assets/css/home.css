@@ -894,11 +894,6 @@
   border: 1px solid var(--border-1);
 }
 
-.area-card:hover {
-  border-color: var(--primary);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
-}
-
 .area-card svg {
   display: inline-block;
   width: 40px;
