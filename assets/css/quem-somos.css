@@ -192,21 +192,8 @@
   transition: var(--transition);
 }
 
-.value-card-accent {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--primary);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  border-radius: 16px 16px 0 0;
-}
-
 .value-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-2px);
   box-shadow: 0 16px 48px rgba(0, 38, 184, 0.08);
   border-color: rgba(242, 94, 25, 0.2);
 }
