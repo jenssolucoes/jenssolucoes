@@ -854,8 +854,9 @@
   gap: 12px;
   height: 100%; /* Preenche toda a altura do slide */
   box-sizing: border-box;
-  transition: border-color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              box-shadow 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition:
+    border-color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   cursor: grab;
 }
 
@@ -885,13 +886,15 @@
   justify-content: center;
   flex-shrink: 0;
   margin-bottom: 4px;
-  transition: background-color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition:
+    background-color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .popular-card-icon svg {
-  transition: color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              fill 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition:
+    color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    fill 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .popular-card h3 {
@@ -931,7 +934,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 2px;
   width: 100%;
   margin-top: 32px;
   padding-bottom: 8px;
@@ -939,8 +942,13 @@
 }
 
 .popular-swiper-pagination .swiper-pagination-bullet {
-  background-color: var(--primary-light);
+  background-color: var(--border-1);
   opacity: 1;
+  width: 8px;
+  height: 8px;
+  transition:
+    background-color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    width 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .popular-swiper-pagination .swiper-pagination-bullet-active {
@@ -968,7 +976,7 @@
   border-radius: 52px;
   background-color: var(--background-1);
   border: 1px solid var(--border-1);
-  color: var(--secondary);
+  color: var(--text-body);
   cursor: pointer;
   transition: var(--transition);
   flex-shrink: 0;
