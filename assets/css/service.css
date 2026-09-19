@@ -5,8 +5,8 @@
 /* ====== SERVICE HERO =========== */
 .service-hero {
   background-color: var(--secondary);
+  height: calc(100dvh - var(--header-height));
   min-height: 720px;
-  min-height: max(100vh, 720px);
   padding: 64px 0 72px;
   position: relative;
   overflow: hidden;
@@ -18,15 +18,14 @@
 
 @media (min-width: 680px) and (max-width: 991px) {
   .service-hero {
-    min-height: 500px;
     padding: 140px 0 80px;
   }
 }
 
 @media (min-width: 992px) {
   .service-hero {
-    min-height: 100vh;
-
+    height: calc(100dvh - var(--header-height));
+    min-height: 720px;
     padding: calc(var(--header-height) + 40px) 0 40px;
   }
 
