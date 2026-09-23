@@ -698,7 +698,7 @@
   padding: 24px 20px;
   font-family: var(--font-header);
   font-weight: 700;
-  font-size: 16px;
+  font-size: 18px;
   color: var(--text-heading);
   cursor: pointer;
   list-style: none;
@@ -736,8 +736,8 @@
 
 .faq-item[open] summary {
   color: var(--secondary);
+  font-size: 18px;
 }
-
 .faq-item[open] .icon-plus {
   display: none;
 }
@@ -749,7 +749,7 @@
 .faq-answer p {
   padding: 0 20px 24px 20px;
   color: var(--text-body);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.7;
   margin: 0;
   animation: fadeInDown 0.3s ease;
