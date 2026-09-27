@@ -615,7 +615,7 @@ img {
 }
 
 /* ---- Coluna Contato: itens com ícone ---- */
-.footer-contact-item {
+a.footer-contact-item {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -624,23 +624,23 @@ img {
   font-size: 15px;
 }
 
-.footer-contact-item svg {
+a.footer-contact-item svg {
   flex-shrink: 0;
   color: var(--primary);
 }
 
-.footer-contact-item span {
+a.footer-contact-item span {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.footer-contact-item:hover {
+a.footer-contact-item:hover {
   color: var(--text-inverse);
   transform: translateX(4px);
 }
 
-.footer-contact-item:hover svg {
+a.footer-contact-item:hover svg {
   color: var(--primary);
 }
 
