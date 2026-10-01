@@ -800,7 +800,7 @@
 
 .popular-services .section-header {
   margin-bottom: 40px;
-  padding: 0 20px;
+  padding: 0;
 }
 
 .popular-services .section-description {
@@ -810,7 +810,7 @@
 
 .popular-swiper-wrapper-outer {
   position: relative;
-  padding: 0 20px;
+  padding: 0;
 }
 
 .popular-swiper {
