@@ -60,19 +60,43 @@ class Header {
   }
 
   toggleMenu() {
-    const isOpen = this.navLinks.classList.toggle("active");
-    this.toggle.classList.toggle("active", isOpen);
-    if (this.navbar) this.navbar.classList.toggle("menu-open", isOpen);
-    this.toggle.setAttribute("aria-expanded", isOpen);
-    this.toggle.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
+    if (this.navLinks.classList.contains("active")) {
+      this.closeMenu();
+      return;
+    }
+    this.openMenu();
+  }
+
+  openMenu() {
+    clearTimeout(this._closeBgTimer);
+    clearTimeout(this._openMenuTimer);
+
+    // 1. First make the header blue (0.15s CSS transition)
+    if (this.navbar) this.navbar.classList.add("menu-open");
+    this.toggle.classList.add("active");
+    this.toggle.setAttribute("aria-expanded", "true");
+    this.toggle.setAttribute("aria-label", "Fechar menu");
+
+    // 2. After bg transition, slide the menu down
+    this._openMenuTimer = setTimeout(() => {
+      this.navLinks.classList.add("active");
+    }, 50);
   }
 
   closeMenu() {
+    clearTimeout(this._closeBgTimer);
+    clearTimeout(this._openMenuTimer);
+
+    // 1. First slide the menu up
     this.navLinks.classList.remove("active");
     this.toggle.classList.remove("active");
-    if (this.navbar) this.navbar.classList.remove("menu-open");
     this.toggle.setAttribute("aria-expanded", "false");
     this.toggle.setAttribute("aria-label", "Abrir menu");
+
+    // 2. After menu closes (500ms), fade the bg to transparent
+    this._closeBgTimer = setTimeout(() => {
+      if (this.navbar) this.navbar.classList.remove("menu-open");
+    }, 500);
   }
 
   handleScroll() {
