@@ -17,3 +17,11 @@ http://www.jenssolucoes.com.br/* https://jenssolucoes.com.br/:splat 301!
 /reformas /servicos/reformas-curitiba/ 301
 /seguranca /servicos/seguranca-eletronica/ 301
 /automacao /servicos/automacao-residencial/ 301
+
+# Redirecionamentos de paginas renomeadas
+/servicos/eletricista-curitiba/instalacao-e-conserto-chuveiro /servicos/eletricista-curitiba/instalacao-chuveiro-eletrico/ 301!
+/servicos/eletricista-curitiba/instalacao-e-conserto-chuveiro/ /servicos/eletricista-curitiba/instalacao-chuveiro-eletrico/ 301!
+
+/servicos/eletricista-curitiba/troca-de-disjuntores /servicos/eletricista-curitiba/instalacao-disjuntor/ 301!
+/servicos/eletricista-curitiba/troca-de-disjuntores/ /servicos/eletricista-curitiba/instalacao-disjuntor/ 301!
+
