@@ -270,7 +270,7 @@
   flex: 1;
 }
 
-.step-body h4 {
+.step-body h3 {
   font-family: var(--font-header);
   font-size: 18px;
   font-weight: 700;

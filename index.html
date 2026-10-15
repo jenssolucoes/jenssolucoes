@@ -137,7 +137,7 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "ProfessionalService",
+        "@type": ["Electrician", "Plumber"],
         "@id": "https://jenssolucoes.com.br/#localBusiness",
         "name": "JENS Soluções – Eletricista e Encanador",
         "alternateName": "JENS Soluções",
@@ -194,10 +194,15 @@
               "Monday",
               "Tuesday",
               "Wednesday",
-              "Thursday",
-              "Friday"
+              "Thursday"
             ],
-            "opens": "08:00",
+            "opens": "00:00",
+            "closes": "23:59"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Friday",
+            "opens": "00:00",
             "closes": "18:00"
           }
         ],
@@ -406,7 +411,7 @@
           <a href="/contato/">Contato</a>
           <div class="nav-mobile-extras">
             <a
-              href="https://wa.me/5541996012767?text=Olá!%20Vim%20pelo%20website%20da%20JENS%20Soluções%20e%20gostaria%20de%20obter%20mais%20informações%20sobre%20os%20serviços%20oferecidos.%20Poderiam%20me%20atender%3F"
+              href="https://wa.me/5541996012767?text=Ol%C3%A1!%20Vim%20pelo%20website%20da%20JENS%20Solu%C3%A7%C3%B5es%20e%20gostaria%20de%20obter%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20servi%C3%A7os%20oferecidos.%20Poderiam%20me%20atender%3F"
               class="btn btn-primary btn-icon"
               target="_blank"
               style="width: 100%; justify-content: center"
@@ -475,7 +480,7 @@
 
         <div class="nav-actions">
           <a
-            href="https://wa.me/5541996012767?text=Olá!%20Vim%20pelo%20website%20da%20JENS%20Soluções%20e%20gostaria%20de%20obter%20mais%20informações%20sobre%20os%20serviços%20oferecidos.%20Poderiam%20me%20atender%3F"
+            href="https://wa.me/5541996012767?text=Ol%C3%A1!%20Vim%20pelo%20website%20da%20JENS%20Solu%C3%A7%C3%B5es%20e%20gostaria%20de%20obter%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20servi%C3%A7os%20oferecidos.%20Poderiam%20me%20atender%3F"
             class="btn btn-primary btn-icon"
             target="_blank"
             ><svg
@@ -514,7 +519,7 @@
             </p>
             <div class="hero-banner-actions">
               <a
-                href="https://wa.me/5541996012767?text=Olá!%20Vim%20pelo%20website%20da%20JENS%20Soluções%20e%20gostaria%20de%20obter%20mais%20informações%20sobre%20os%20serviços%20oferecidos.%20Poderiam%20me%20atender%3F"
+                href="https://wa.me/5541996012767?text=Ol%C3%A1!%20Vim%20pelo%20website%20da%20JENS%20Solu%C3%A7%C3%B5es%20e%20gostaria%20de%20obter%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20servi%C3%A7os%20oferecidos.%20Poderiam%20me%20atender%3F"
                 class="btn btn-primary btn-lg btn-icon"
                 target="_blank"
               >
@@ -530,7 +535,10 @@
                 </svg>
                 FALAR NO WHATSAPP
               </a>
-              <a href="#servicos" class="btn btn-outline-light btn-lg btn-icon">
+              <a
+                href="tel:+5541996012767"
+                class="btn btn-outline-light btn-lg btn-icon"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="32"
@@ -775,7 +783,7 @@
                 >
                   <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
                 </svg>
-                Profissionais experiêntes e qualificados
+                Profissionais experientes e qualificados
               </li>
               <li>
                 <svg
@@ -1045,17 +1053,17 @@
                 </summary>
                 <div class="faq-answer">
                   <p>
-                    Nossa equipe de emergência está disponível 24 horas por dia.
-                    Em casos urgentes, buscamos chegar ao local o mais rápido
-                    possível, dependendo da sua localização em Curitiba ou
-                    Região Metropolitana.
+                    Atendemos 24 horas de domingo a quinta e até as 18h na
+                    sexta. Em casos urgentes, chame no WhatsApp e buscamos
+                    chegar o mais rápido possível, dependendo da sua localização
+                    em Curitiba ou Região Metropolitana.
                   </p>
                 </div>
               </details>
 
               <details class="faq-item">
                 <summary>
-                  <span>Vocês oferecem orçamento gratuito?</span>
+                  <span>Como solicito um orçamento?</span>
                   <div class="faq-icon">
                     <svg
                       class="icon-plus"
@@ -1079,10 +1087,9 @@
                 </summary>
                 <div class="faq-answer">
                   <p>
-                    Para a maioria dos orçamentos não cobramos taxa de visita se
-                    o local for dentro do nosso perímetro de atendimento padrão.
-                    A taxa só é aplicada caso seja uma distância longa ou
-                    análise muito complexa, o que é avisado previamente.
+                    Chame no WhatsApp, descreva o serviço e a localização e, se
+                    possível, envie fotos ou vídeos. Retornamos com as
+                    orientações e combinamos a visita quando necessário.
                   </p>
                 </div>
               </details>
@@ -1163,19 +1170,17 @@
             <div class="faq-image-card">
               <img
                 src="/assets/images/cta-image.webp"
-                alt="Suporte"
+                alt="Fale já com um Profissional"
                 class="faq-main-img"
               />
               <div class="faq-image-gradient"></div>
 
               <div class="faq-overlay-text">
-                <h3>
-                  Precisa de Ajuda? Nossa Equipe de está à Sua Disposição.
-                </h3>
+                <h3>Precisa de Ajuda? Estamos à Sua Disposição.</h3>
               </div>
 
               <a
-                href="https://wa.me/5541996012767?text=Olá!%20Vim%20pelo%20site%20da%20JENS%20Soluções%20e%20gostaria%20de%20solicitar%20um%20orçamento."
+                href="https://wa.me/5541996012767?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20JENS%20Solu%C3%A7%C3%B5es%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
                 target="_blank"
                 rel="noopener noreferrer"
                 class="faq-support-box"
@@ -1402,8 +1407,8 @@
 
             <h2>Precisando de Consertos e Manutenção em Curitiba?</h2>
             <p>
-              Fale com a nossa equipe e agende uma visita. Atendemos Curitiba e
-              toda a Região Metropolitana.
+              Fale conosco e agende uma visita. Atendemos Curitiba e toda a
+              Região Metropolitana.
             </p>
             <div class="cta-actions">
               <!-- Botão WhatsApp — laranjado (btn-primary) -->
@@ -1591,7 +1596,7 @@
           </a>
 
           <a
-            href="https://wa.me/5541996012767?text=Olá!%20Vim%20pelo%20website%20da%20JENS%20Soluções%20e%20gostaria%20de%20obter%20mais%20informações%20sobre%20os%20serviços%20oferecidos.%20Poderiam%20me%20atender%3F"
+            href="https://wa.me/5541996012767?text=Ol%C3%A1!%20Vim%20pelo%20website%20da%20JENS%20Solu%C3%A7%C3%B5es%20e%20gostaria%20de%20obter%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20servi%C3%A7os%20oferecidos.%20Poderiam%20me%20atender%3F"
             target="_blank"
             rel="noopener"
             class="footer-contact-item"
