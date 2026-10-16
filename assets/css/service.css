@@ -351,6 +351,14 @@
   display: block;
 }
 
+.service-faq-item.is-closing .icon-plus {
+  display: block;
+}
+
+.service-faq-item.is-closing .icon-minus {
+  display: none;
+}
+
 .service-faq-answer {
   font-size: 14px;
   color: var(--text-body);

@@ -158,36 +158,183 @@ class SmoothScroll {
 
 class FaqAccordion {
   constructor() {
-    this.items = document.querySelectorAll(".faq__item");
+    this.items = document.querySelectorAll(".faq-item, .service-faq-item");
     if (this.items.length === 0) return;
     this.init();
   }
 
   init() {
+    this.instances = [];
     this.items.forEach((item) => {
-      const btn = item.querySelector(".faq__question");
-      if (btn) {
-        btn.addEventListener("click", () => this.toggle(item));
-      }
+      this.instances.push(new FaqAccordionItem(item, this));
     });
   }
 
-  toggle(clickedItem) {
-    const isActive = clickedItem.classList.contains("active");
-
-    // Close all
-    this.items.forEach((item) => {
-      item.classList.remove("active");
-      const btn = item.querySelector(".faq__question");
-      if (btn) btn.setAttribute("aria-expanded", "false");
+  closeOthers(currentItem) {
+    const parent = currentItem.el.parentElement;
+    this.instances.forEach((instance) => {
+      if (
+        instance !== currentItem &&
+        instance.el.parentElement === parent &&
+        instance.el.open &&
+        !instance.isClosing
+      ) {
+        instance.shrink();
+      }
     });
+  }
+}
 
-    // Open clicked if it was closed
-    if (!isActive) {
-      clickedItem.classList.add("active");
-      const btn = clickedItem.querySelector(".faq__question");
-      if (btn) btn.setAttribute("aria-expanded", "true");
+class FaqAccordionItem {
+  constructor(el, manager) {
+    this.el = el;
+    this.manager = manager;
+    this.summary = el.querySelector("summary");
+    this.content = el.querySelector(".faq-answer, .service-faq-answer");
+    if (!this.summary || !this.content) return;
+
+    this.animation = null;
+    this.contentAnimation = null;
+    this.isClosing = false;
+    this.isExpanding = false;
+
+    this.summary.addEventListener("click", (e) => this.onClick(e));
+  }
+
+  onClick(e) {
+    e.preventDefault();
+
+    if (this.isClosing || !this.el.open) {
+      this.open();
+    } else if (this.isExpanding || this.el.open) {
+      this.shrink();
     }
+  }
+
+  open() {
+    if (this.manager) {
+      this.manager.closeOthers(this);
+    }
+
+    this.isClosing = false;
+    this.el.classList.remove("is-closing");
+
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    const duration = prefersReducedMotion ? 0 : 320;
+
+    const startHeight = this.el.offsetHeight;
+
+    this.el.style.height = "auto";
+    this.el.open = true;
+
+    const endHeight = this.el.offsetHeight;
+
+    this.isExpanding = true;
+    this.el.style.overflow = "hidden";
+
+    if (this.animation) this.animation.cancel();
+    if (this.contentAnimation) this.contentAnimation.cancel();
+
+    if (duration === 0 || !this.el.animate) {
+      this.onAnimationFinish(true);
+      return;
+    }
+
+    this.animation = this.el.animate(
+      {
+        height: [`${startHeight}px`, `${endHeight}px`],
+      },
+      {
+        duration: duration,
+        easing: "cubic-bezier(0.25, 1, 0.5, 1)",
+      }
+    );
+
+    this.contentAnimation = this.content.animate(
+      {
+        opacity: [0, 1],
+        transform: ["translateY(-8px)", "translateY(0)"],
+      },
+      {
+        duration: duration,
+        easing: "cubic-bezier(0.25, 1, 0.5, 1)",
+      }
+    );
+
+    this.animation.onfinish = () => this.onAnimationFinish(true);
+    this.animation.oncancel = () => {
+      this.isExpanding = false;
+    };
+  }
+
+  shrink() {
+    this.isExpanding = false;
+    this.isClosing = true;
+    this.el.classList.add("is-closing");
+
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    const duration = prefersReducedMotion ? 0 : 280;
+
+    const startHeight = this.el.offsetHeight;
+    const computedStyle = window.getComputedStyle(this.el);
+    const paddingBorder =
+      (parseFloat(computedStyle.paddingTop) || 0) +
+      (parseFloat(computedStyle.paddingBottom) || 0) +
+      (parseFloat(computedStyle.borderTopWidth) || 0) +
+      (parseFloat(computedStyle.borderBottomWidth) || 0);
+    const endHeight = this.summary.offsetHeight + paddingBorder;
+
+    this.el.style.overflow = "hidden";
+
+    if (this.animation) this.animation.cancel();
+    if (this.contentAnimation) this.contentAnimation.cancel();
+
+    if (duration === 0 || !this.el.animate) {
+      this.onAnimationFinish(false);
+      return;
+    }
+
+    this.animation = this.el.animate(
+      {
+        height: [`${startHeight}px`, `${endHeight}px`],
+      },
+      {
+        duration: duration,
+        easing: "cubic-bezier(0.25, 1, 0.5, 1)",
+      }
+    );
+
+    this.contentAnimation = this.content.animate(
+      {
+        opacity: [1, 0],
+        transform: ["translateY(0)", "translateY(-6px)"],
+      },
+      {
+        duration: Math.max(120, duration - 60),
+        easing: "ease-in",
+      }
+    );
+
+    this.animation.onfinish = () => this.onAnimationFinish(false);
+    this.animation.oncancel = () => {
+      this.isClosing = false;
+      this.el.classList.remove("is-closing");
+    };
+  }
+
+  onAnimationFinish(isOpen) {
+    this.el.open = isOpen;
+    this.animation = null;
+    this.contentAnimation = null;
+    this.isClosing = false;
+    this.isExpanding = false;
+    this.el.classList.remove("is-closing");
+    this.el.style.height = "";
+    this.el.style.overflow = "";
   }
 }
 
