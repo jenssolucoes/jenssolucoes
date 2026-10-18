@@ -716,7 +716,7 @@ img {
 /* ---- Coluna Contato: itens com ícone ---- */
 a.footer-contact-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
   color: rgba(255, 255, 255, 0.65);
   margin-bottom: 14px;
@@ -726,12 +726,12 @@ a.footer-contact-item {
 a.footer-contact-item svg {
   flex-shrink: 0;
   color: var(--primary);
+  margin-top: 2px;
 }
 
 a.footer-contact-item span {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  line-height: 1.4;
+  word-break: normal;
 }
 
 a.footer-contact-item:hover {

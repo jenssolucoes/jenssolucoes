@@ -92,9 +92,8 @@
   font-size: 16px;
   font-weight: 600;
   color: var(--text-heading);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  line-height: 1.4;
+  word-break: normal;
 }
 
 .contact-card-arrow {
