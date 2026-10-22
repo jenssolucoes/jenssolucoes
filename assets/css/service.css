@@ -29,7 +29,7 @@
     padding: calc(var(--header-height) + 40px) 0 40px;
   }
 
-  .service-hero > .container {
+  .service-hero>.container {
     width: 100%;
   }
 }
@@ -169,7 +169,7 @@
   line-height: 1.75;
 }
 
-.service-description p + p {
+.service-description p+p {
   margin-top: 16px;
 }
 
@@ -309,6 +309,7 @@
   list-style: none;
   gap: 16px;
 }
+
 .service-faq-item summary h3 {
   color: var(--secondary);
   font-family: var(--font-header);
@@ -316,6 +317,7 @@
   font-weight: 700;
   user-select: none;
 }
+
 .service-faq-item summary::-webkit-details-marker {
   display: none;
 }
@@ -365,8 +367,9 @@
   line-height: 1.7;
   padding-bottom: 20px;
 }
+
 .faq-answer a {
-  color: var(--primary);
+
   font-weight: 600;
 
   text-decoration-color: rgba(241, 94, 26, 0.35);
@@ -378,6 +381,7 @@
   color: var(--primary-dim);
   text-decoration-color: var(--primary-dim);
 }
+
 /* ====== SIDEBAR (STICKY CTA) === */
 .service-sidebar {
   display: flex;
@@ -399,6 +403,7 @@
 
   position: relative;
 }
+
 .watermark {
   position: absolute;
   right: -60px;
@@ -411,17 +416,20 @@
   z-index: 0;
   color: #fff;
 }
+
 .cta-card-header {
   display: flex;
   align-items: center;
   gap: 12px;
 }
+
 .cta-card-header-icon {
   color: #fff;
   width: 36px;
   height: 36px;
   flex-shrink: 0;
 }
+
 .cta-card-inner {
   padding: 28px;
   position: relative;
@@ -495,6 +503,7 @@
   flex-shrink: 0;
   color: var(--secondary);
 }
+
 .cta-card-bottom {
   display: flex;
   justify-content: center;
@@ -503,6 +512,7 @@
   gap: 10px;
   min-width: unset;
 }
+
 /* ====== CTA ORANGE ============ */
 .cta-inline-mobile {
   background-color: var(--primary);
@@ -859,7 +869,8 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  height: 100%; /* Preenche toda a altura do slide */
+  height: 100%;
+  /* Preenche toda a altura do slide */
   box-sizing: border-box;
   transition:
     border-color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
