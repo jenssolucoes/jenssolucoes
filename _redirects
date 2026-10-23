@@ -1,9 +1,3 @@
-# Dominio Canonico (Redireciona subdominios e HTTP para HTTPS principal)
-https://jenssolucoes.pages.dev/* https://jenssolucoes.com.br/:splat 301!
-http://jenssolucoes.com.br/* https://jenssolucoes.com.br/:splat 301!
-https://www.jenssolucoes.com.br/* https://jenssolucoes.com.br/:splat 301!
-http://www.jenssolucoes.com.br/* https://jenssolucoes.com.br/:splat 301!
-
 # Redirecionamentos de extensoes .html para URLs limpas com barra final
 /index.html / 301!
 /quem-somos.html /quem-somos/ 301!
