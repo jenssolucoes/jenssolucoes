@@ -65,45 +65,44 @@
 
   <!-- Estilos -->
   <link rel="stylesheet" href="/assets/css/main.css?v=16" />
+  <link rel="stylesheet" href="/assets/css/hero-pages.css?v=16" />
   <style>
     .not-found-section {
-      padding: 120px 0;
+      padding: 64px 0 88px;
       text-align: center;
-      min-height: 60vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
     }
 
-    .not-found-title {
-      font-size: 80px;
-      color: var(--primary);
-      font-family: var(--font-header);
+    .not-found-code {
+      display: block;
+      font-size: 88px;
+      font-family: var(--font-header, sans-serif);
+      font-weight: 700;
+      color: var(--primary, #f25e19);
       line-height: 1;
-      margin-bottom: 20px;
-    }
-
-    .not-found-subtitle {
-      font-size: 32px;
-      color: var(--text-heading);
-      font-family: var(--font-header);
-      margin-bottom: 24px;
+      margin-bottom: 16px;
+      letter-spacing: -2px;
     }
 
     .not-found-text {
-      font-size: 18px;
-      color: var(--text-body);
-      max-width: 500px;
-      margin: 0 auto 40px;
+      font-size: 17px;
+      color: var(--text-body, #555555);
+      max-width: 520px;
+      margin: 0 auto 32px;
+      line-height: 1.6;
     }
 
     @media (min-width: 768px) {
-      .not-found-title {
-        font-size: 140px;
+      .not-found-section {
+        padding: 80px 0 108px;
       }
 
-      .not-found-subtitle {
-        font-size: 40px;
+      .not-found-code {
+        font-size: 120px;
+        margin-bottom: 20px;
+      }
+
+      .not-found-text {
+        font-size: 18px;
       }
     }
   </style>
@@ -189,20 +188,42 @@
   </nav>
 
   <main>
+    <!-- ====== PAGE HERO ====== -->
+    <section class="page-hero">
+      <div class="container page-hero-container">
+        <div class="page-hero-content">
+          <nav class="breadcrumb" aria-label="Navegação estrutural">
+            <a href="/" class="breadcrumb-home" aria-label="Página Inicial">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M4 21V9l8-6l8 6v12h-6v-7h-4v7z" />
+              </svg>
+            </a>
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor" aria-hidden="true">
+              <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+            </svg>
+            <span>Página Não Encontrada</span>
+          </nav>
+
+          <h1 class="page-hero-title">Página Não Encontrada</h1>
+          <p class="page-hero-text">
+            O endereço que você tentou acessar não existe, foi alterado ou está temporariamente indisponível.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== 404 CONTENT ====== -->
     <section class="section not-found-section bg-light">
       <div class="container">
-        <h1 class="not-found-title">404</h1>
-        <h2 class="not-found-subtitle">Página não encontrada</h2>
+        <span class="not-found-code">404</span>
         <p class="not-found-text">
-          Desculpe, não conseguimos encontrar a página que você está
-          procurando. Ela pode ter sido removida, alterada de nome, ou está
-          temporariamente indisponível.
+          Volte ao início e explore nossos serviços para encontrar exatamente o que você precisa.
         </p>
-        <a href="/" class="btn btn-primary btn-lg btn-icon" style="margin: 0 auto">
-          Voltar para o Início
-          <svg viewBox="0 0 24 24" fill="currentColor">
+        <a href="/" class="btn btn-primary btn-lg btn-icon" style="margin: 0 auto; display: inline-flex;">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
             <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
           </svg>
+          Voltar ao Início
         </a>
       </div>
     </section>
