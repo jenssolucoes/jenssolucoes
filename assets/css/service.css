@@ -372,7 +372,7 @@
 
   font-weight: 600;
 
-  text-decoration-color: rgba(241, 94, 26, 0.35);
+  text-decoration-color: rgba(66, 66, 66, 0.35);
   text-underline-offset: 3px;
   transition: var(--transition);
 }
