@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://jenssolucoes.com.br/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -54,7 +54,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-   <url>
+  <url>
     <loc>https://jenssolucoes.com.br/servicos/eletricista-curitiba/instalacao-de-luminaria/</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
@@ -78,7 +78,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-    <url>
+  <url>
     <loc>https://jenssolucoes.com.br/servicos/reformas-curitiba/conserto-telhado/</loc>
     <lastmod>2026-10-29</lastmod>
     <changefreq>monthly</changefreq>
@@ -98,13 +98,19 @@
   </url>
   <url>
     <loc>https://jenssolucoes.com.br/blog/</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jenssolucoes.com.br/blog/sinais-instalacao-eletrica-revisao-urgente/</loc>
     <lastmod>2026-08-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jenssolucoes.com.br/blog/goteiras-no-telhado-como-identificar-origem/</loc>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
